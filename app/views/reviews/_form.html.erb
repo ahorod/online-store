@@ -1,0 +1,6 @@
+<%= simple_form_for [@product, @review], url: @formurl do |form| %>
+  <%= form.input :author %>
+  <%= form.input :rating %>
+  <%= form.input :content %>
+  <%= form.submit class: 'btn btn-success'%>
+<% end %>

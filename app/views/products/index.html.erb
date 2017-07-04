@@ -1,0 +1,28 @@
+
+<div class="album text-muted">
+  <div class="container">
+
+        <% @products.each do |product|  %>
+
+
+<div class="d-inline-block" style="width:30%">
+  <div class="card" >
+    <div class="card-block">
+      <div class="card-title">
+        <%= link_to product do %>
+          <b><%= product.name %></b>
+        <% end %>
+      </div>
+      <div class="card-text">
+        <p> <%= product.origin %></p>
+        <p> <%= number_to_currency(product.cost) %> </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <% end %>
+
+  </div>
+</div>
