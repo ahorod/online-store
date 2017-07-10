@@ -10,12 +10,17 @@
 <h3>Reviews</h3>
 <% if @product.reviews.any? %>
     <% @product.reviews.each do |review| %>
-      <p><%= review.author %> <%= review.rating %> <%= review.content %>
-          <%= link_to 'Edit Review', edit_product_review_path(@product, review), :class => 'btn btn-warning btn-sm' %>
+      <h6><%= review.author %></h6>
+      <h6> rating <%= review.rating %> <i class="fa fa-star" aria-hidden="true"></i></h6>
+      <p><%= review.content %>
+
+          <%= link_to edit_product_review_path(@product, review) do %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          <% end %>
+
           <%= link_to(product_review_path(@product, review), :method => 'delete')  do %>
           <i class="fa fa-trash" aria-hidden="true"></i>
           <% end %>
-
       </p>
     <% end %>
 

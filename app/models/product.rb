@@ -10,7 +10,7 @@ class Product < ApplicationRecord
    .limit(5)
    )}
 
-   scope :local, -> {where("origin=?",  "Ukraine")}
+   scope :local, -> {where("origin=?",  "Kenya")}
 
    scope :most_recent, -> { order(created_at: :desc).limit(3)}
 end
